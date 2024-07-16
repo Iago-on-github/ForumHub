@@ -2,7 +2,9 @@
 <p align="center">🚀ForumHub API: contains the technology Forum's CRUD functionalities - Create, read, update and delete.</p>
 
 <h2>Technologies: </h2>
+
 • Java 22
+
 • SpringBoot
 
 • Spring Security
@@ -12,6 +14,7 @@
 • PostgreSQL
 
 <h3>Functionalities: </h3>
+
 • Create topic: Create a topic to clarify your doubts!
 
 • List a topic: See all active topics!
