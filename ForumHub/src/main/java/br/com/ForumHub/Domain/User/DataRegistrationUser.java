@@ -5,12 +5,12 @@ import jakarta.validation.constraints.NotNull;
 
 public record DataRegistrationUser(Long id,
                                    @NotNull
-                                   String name,
+                                   String login,
                                    @NotBlank
                                    String email,
                                    @NotNull
                                    String password) {
     public DataRegistrationUser(User user) {
-        this(user.getId(), user.getName(), user.getEmail(), user.getPassword());
+        this(user.getId(), user.getLogin(), user.getEmail(), user.getPassword());
     }
 }

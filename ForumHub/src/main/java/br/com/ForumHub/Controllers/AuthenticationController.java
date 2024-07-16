@@ -12,8 +12,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping
 @RestController
+@RequestMapping("/login")
 public class AuthenticationController {
     @Autowired
     private AuthenticationManager manager;
@@ -27,5 +27,4 @@ public class AuthenticationController {
         var tokenGeneration = tokenGenerationService.GenerationToken((User) authentication.getPrincipal());
         return ResponseEntity.ok(new DataTokenJWT(tokenGeneration));
     }
-
 }

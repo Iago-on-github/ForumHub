@@ -24,12 +24,12 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String login;
     private String email;
     private String password;
 
     public User(DataRegistrationUser data) {
-        this(data.id(), data.name(), data.email(), data.password());
+        this(data.id(), data.login(), data.email(), data.password());
     }
 
     @Override
