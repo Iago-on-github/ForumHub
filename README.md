@@ -3,7 +3,6 @@
 
 <h2>Technologies: </h2>
 • Java 22
-
 • SpringBoot
 
 • Spring Security
@@ -14,9 +13,13 @@
 
 <h3>Functionalities: </h3>
 • Create topic: Create a topic to clarify your doubts!
+
 • List a topic: See all active topics!
+
 • Detail topic: See all the details of a given topic!
+
 • Update topic: Update your topic as needed. Questions can always arise!
+
 • Delete topic: Delete your thread as needed!
 
   <h4 align="center"> 
