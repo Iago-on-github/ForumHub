@@ -7,6 +7,7 @@ import br.com.ForumHub.Exceptions.CustomException;
 import br.com.ForumHub.Repositories.TopicRepository;
 import br.com.ForumHub.Repositories.UserRepository;
 import br.com.ForumHub.Domain.User.User;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicsController {
 
     @Autowired

@@ -20,13 +20,12 @@ public class TokenGenerationService {
     private String secret;
     public String GenerationToken(User user) throws CustomException {
         try {
-            Algorithm algorithm = Algorithm.HMAC256("12345678");
-            String token = JWT.create()
+            var algorithm = Algorithm.HMAC256(secret);
+            return JWT.create()
                     .withIssuer("ForúmHub development team.")
-                    .withSubject(user.getEmail())
+                    .withSubject(user.getLogin())
                     .withExpiresAt(TokenExpirationDate())
                     .sign(algorithm);
-            return token;
         } catch (JWTCreationException exception) {
             throw new CustomException("Error ao gerar o Token JWT.", exception);
         }
@@ -36,7 +35,7 @@ public class TokenGenerationService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("API ForumHub")
+                    .withIssuer("ForúmHub development team.")
                     .build()
                     .verify(tokenJWT)
                     .getSubject();

@@ -1,5 +1,6 @@
 package br.com.ForumHub.Controllers;
 
+import br.com.ForumHub.Domain.User.DataRegistrationUserResponse;
 import br.com.ForumHub.Repositories.UserRepository;
 import br.com.ForumHub.Domain.User.DataRegistrationUser;
 import br.com.ForumHub.Domain.User.User;
@@ -26,6 +27,6 @@ public class UserController {
         var user = new User(data);
         userRepository.save(user);
         var uri = uriBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DataRegistrationUser(user));
+        return ResponseEntity.created(uri).body(new DataRegistrationUserResponse(user));
     }
 }
